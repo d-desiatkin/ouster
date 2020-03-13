@@ -17,8 +17,9 @@
   <arg name="operation_mode" default="1024x10" doc="Supported operation modes: 512x10, 1024x10, 2048x10, 512x20, 1024x20 (horizontal resolution x scan rate)"/>
   <arg name="pulse_mode" default="STANDARD" doc="Laser pulse width, available modes: STANDARD and NARROW"/>
   <arg name="window_rejection" default="true" doc="Window (short range) rejection enable"/>
+  <arg name="node_name" default="ouster_driver" doc="Node name needed for simulation compat"/>
 
-  <node pkg="ouster_driver" type="ouster_driver" name="ouster_driver" output="screen" >
+  <node pkg="ouster_driver" type="ouster_driver" name="$(arg node_name)" output="screen" >
     <param name="os1_lidar_address" value="$(arg lidar_address)"/>
     <param name="pc_address" value="$(arg pc_address)"/>
     <param name="os1_lidar_port" value="$(arg lidar_port)"/>

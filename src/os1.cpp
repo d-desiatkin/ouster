@@ -249,11 +249,12 @@ std::shared_ptr<client> init_client(const std::string& hostname,
 	    success &= do_cmd_chk("set_config_param", "pulse_mode " + _pulse_mode_str);
 	    do_configure = true;
     }
+/*    std::cout << "\n" << curr_window_rejection_str << "";
     if (curr_window_rejection_str != _window_rejection_str) {
 		success &= do_cmd_chk("set_config_param", "window_rejection_enable " + _window_rejection_str);
 		do_configure = true;
    	}
-    
+*/    
     if (!success) return std::shared_ptr<client>();
     
     //reinitialize to take effect (if necessary)
